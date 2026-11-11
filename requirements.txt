@@ -12,15 +12,10 @@ anyio==4.16.0
     # via
     #   anthropic
     #   fastapi
-    #   gradio
     #   httpx
     #   httpx2
     #   openai
     #   starlette
-audioop-lts==0.2.2 ; python_full_version >= '3.13'
-    # via gradio
-brotli==1.2.1
-    # via gradio
 certifi==2026.10.23
     # via
     #   httpcore
@@ -46,31 +41,20 @@ docstring-parser==0.18.0
 faiss-cpu==1.16.0
     # via rag-demo
 fastapi==0.162.4
-    # via gradio
+    # via rag-demo
 filelock==4.2.10
     # via
     #   huggingface-hub
     #   torch
 fsspec==2026.9.0
     # via
-    #   gradio-client
     #   huggingface-hub
     #   torch
-gradio==6.31.0
-    # via rag-demo
-gradio-client==2.7.2
-    # via
-    #   gradio
-    #   hf-gradio
-groovy==0.1.2
-    # via gradio
 h11==0.16.0
     # via
     #   httpcore
     #   httpcore2
     #   uvicorn
-hf-gradio==0.4.1
-    # via gradio
 hf-xet==1.8.0 ; platform_machine == 'AMD64' or platform_machine == 'aarch64' or platform_machine == 'amd64' or platform_machine == 'arm64' or platform_machine == 'x86_64'
     # via huggingface-hub
 httpcore==1.0.9
@@ -78,11 +62,7 @@ httpcore==1.0.9
 httpcore2==2.16.0 ; sys_platform != 'emscripten'
     # via httpx2
 httpx==0.28.1
-    # via
-    #   gradio
-    #   gradio-client
-    #   huggingface-hub
-    #   safehttpx
+    # via huggingface-hub
 httpx2==2.16.0
     # via
     #   anthropic
@@ -91,8 +71,6 @@ httpx2-jsfetch==1.0 ; python_full_version >= '3.12' and sys_platform == 'emscrip
     # via httpx2
 huggingface-hub==1.33.0
     # via
-    #   gradio
-    #   gradio-client
     #   sentence-transformers
     #   tokenizers
     #   transformers
@@ -102,9 +80,7 @@ idna==3.20
     #   httpx
     #   httpx2
 jinja2==3.1.6
-    # via
-    #   gradio
-    #   torch
+    # via torch
 jiter==0.19.0
     # via
     #   anthropic
@@ -114,9 +90,7 @@ joblib==1.6.0
 markdown-it-py==4.3.0
     # via rich
 markupsafe==3.0.4
-    # via
-    #   gradio
-    #   jinja2
+    # via jinja2
 mdurl==0.1.2
     # via markdown-it-py
 mpmath==1.3.0
@@ -130,8 +104,6 @@ networkx==3.7 ; python_full_version >= '3.12'
 numpy==2.4.6 ; python_full_version < '3.12'
     # via
     #   faiss-cpu
-    #   gradio
-    #   pandas
     #   rag-demo
     #   scikit-learn
     #   scipy
@@ -140,8 +112,6 @@ numpy==2.4.6 ; python_full_version < '3.12'
 numpy==2.5.4 ; python_full_version >= '3.12'
     # via
     #   faiss-cpu
-    #   gradio
-    #   pandas
     #   rag-demo
     #   scikit-learn
     #   scipy
@@ -194,51 +164,33 @@ opentelemetry-api==1.45.2
     # via
     #   anthropic
     #   fastapi
-orjson==3.13.0
-    # via gradio
 packaging==26.3
     # via
     #   faiss-cpu
-    #   gradio
-    #   gradio-client
     #   huggingface-hub
     #   transformers
-pandas==3.1.1
-    # via gradio
-pillow==12.3.0
-    # via gradio
 pydantic==2.14.3
     # via
     #   anthropic
     #   fastapi
-    #   gradio
     #   openai
     #   typer
 pydantic-core==2.50.4
     # via pydantic
-pydub==0.25.1
-    # via gradio
 pygments==2.21.0
     # via rich
 pypdf==6.19.0
     # via rag-demo
-python-dateutil==4.0.0
-    # via pandas
 python-multipart==0.0.33
-    # via gradio
-pytz==2026.6
-    # via gradio
+    # via rag-demo
 pyyaml==6.0.3
     # via
-    #   gradio
     #   huggingface-hub
     #   transformers
 regex==2026.11.9
     # via transformers
 rich==15.0.0
     # via typer
-safehttpx==0.1.7
-    # via gradio
 safetensors==0.8.0
     # via transformers
 scikit-learn==1.9.1
@@ -251,8 +203,6 @@ scipy==1.18.1 ; python_full_version >= '3.12'
     # via
     #   scikit-learn
     #   sentence-transformers
-semantic-version==2.10.0
-    # via gradio
 sentence-transformers==6.0.1
     # via rag-demo
 setuptools==84.2.1
@@ -264,9 +214,7 @@ sniffio==1.3.1
     #   anthropic
     #   openai
 starlette==1.10.0
-    # via
-    #   fastapi
-    #   gradio
+    # via fastapi
 sympy==1.14.0
     # via torch
 threadpoolctl==3.8.0
@@ -275,8 +223,6 @@ tokenizers==0.23.3
     # via
     #   sentence-transformers
     #   transformers
-tomlkit==0.14.0
-    # via gradio
 torch==2.15.0
     # via
     #   rag-demo
@@ -295,17 +241,12 @@ truststore==0.10.5 ; sys_platform != 'emscripten'
     #   httpcore2
     #   httpx2
 typer==0.29.0
-    # via
-    #   gradio
-    #   hf-gradio
-    #   transformers
+    # via transformers
 typing-extensions==4.16.0
     # via
     #   anthropic
     #   anyio
     #   fastapi
-    #   gradio
-    #   gradio-client
     #   httpx2
     #   huggingface-hub
     #   openai
@@ -320,9 +261,5 @@ typing-inspection==0.4.5
     # via
     #   fastapi
     #   pydantic
-tzdata==2026.6
-    # via
-    #   pandas
-    #   python-dateutil
 uvicorn==0.54.0
-    # via gradio
+    # via rag-demo

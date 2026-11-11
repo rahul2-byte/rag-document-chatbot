@@ -1,0 +1,14 @@
+q1    ANSWER  PASS  [NIST.AI.100-1.pdf, p.25], [NIST.AI.100-1.pdf, p.8], [NIST.AI.100-1.pdf, p.37] | cites expected page
+q2    ANSWER  PASS  [NIST.AI.100-1.pdf, p.17] | cites expected page
+q3    ANSWER  PASS  [NIST.CSWP.29.pdf, p.8], [NIST.CSWP.29.pdf, p.10], [NIST.CSWP.29.pdf, p.20] | cites expected page
+q4    ANSWER  PASS  [NIST.CSWP.29.pdf, p.31], [NIST.CSWP.29.pdf, p.29] | cites expected page
+q5    ANSWER  PASS  [NIST.CSWP.29.pdf, p.27], [NIST.CSWP.29.pdf, p.20], [NIST.CSWP.29.pdf, p.9] | cites expected page
+q6    ANSWER  PASS  [NIST.CSWP.01162020.pdf, p.11], [NIST.CSWP.01162020.pdf, p.22] | cites expected page
+q7    ANSWER  PASS  [NIST.CSWP.01162020.pdf, p.2], [NIST.CSWP.01162020.pdf, p.5] | cites expected page
+q8    ANSWER  PASS  [NIST.AI.100-1.pdf, p.7], [NIST.AI.100-1.pdf, p.26] | cites expected page
+q9    REFUSE  PASS  - | correctly refused
+q10   REFUSE  PASS  - | correctly refused
+
+Answerable with correct citations: 8/8
+Unanswerable refused: 2/2
+TOTAL: 10/10

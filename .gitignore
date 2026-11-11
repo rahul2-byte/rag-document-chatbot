@@ -4,3 +4,13 @@ __pycache__/
 index/
 .pytest_cache/
 .env
+.notes/
+demo/out/
+demo/staging/
+logs/
+logs-archive/
+node_modules/
+package-lock.json
+.DS_Store
+*.egg-info/
+.ruff_cache/

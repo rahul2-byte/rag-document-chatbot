@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Owner console</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b5c66'/%3E%3Cpath d='M9 10h14M9 16h14M9 22h14' stroke='white' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/shared/base.css">
+  <link rel="stylesheet" href="/static/admin.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </div>
+      <div>
+        <h1 class="brand-name">Owner console</h1>
+        <p class="brand-sub">Document library and search index. The chat picks up a rebuilt index automatically.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="stats" aria-label="Index status">
+      <div class="stat"><span class="stat-label">Documents</span><span class="stat-value" id="s-docs">-</span></div>
+      <div class="stat"><span class="stat-label">Passages</span><span class="stat-value" id="s-chunks">-</span></div>
+      <div class="stat"><span class="stat-label">Last built</span><span class="stat-value small" id="s-built">-</span></div>
+      <div class="stat"><span class="stat-label">Embedding model</span><span class="stat-value small mono" id="s-model">-</span></div>
+    </section>
+
+    <section class="panel" aria-labelledby="h-lib">
+      <div class="panel-head">
+        <div>
+          <h2 id="h-lib">Documents</h2>
+          <p class="hint">PDF, TXT or Markdown, up to 50 MB each.</p>
+        </div>
+        <div class="rebuild">
+          <span class="badge badge-warn" id="stale" hidden>Index out of date</span>
+          <span class="badge badge-ok" id="fresh" hidden>Index up to date</span>
+          <button class="btn btn-primary" id="rebuild" type="button">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7"/></svg>
+            <span id="rebuild-label">Rebuild index</span>
+          </button>
+        </div>
+      </div>
+      <div class="result" id="rebuild-result" role="status" hidden></div>
+
+      <label class="drop" id="drop">
+        <input type="file" id="file" multiple accept=".pdf,.txt,.md" class="sr-only">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg>
+        <span><b>Drop files here</b> or <u>choose files</u></span>
+      </label>
+      <ul class="uploads" id="uploads" role="status"></ul>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>File</th><th>Type</th><th class="num">Pages</th><th class="num">Size</th><th class="num">Passages</th><th>Indexed</th><th><span class="sr-only">Actions</span></th></tr></thead>
+          <tbody id="docs"></tbody>
+        </table>
+        <p class="table-empty" id="docs-empty" hidden>No documents yet. Drop a file above, then rebuild the index.</p>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="h-qs">
+      <div class="panel-head">
+        <div>
+          <h2 id="h-qs">Recent questions</h2>
+          <p class="hint">What people asked in the chat, how it went, and how they rated it.</p>
+        </div>
+        <button class="btn" id="qs-refresh" type="button">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7"/></svg>
+          <span>Refresh</span>
+        </button>
+      </div>
+      <dl class="qstats" id="qstats" aria-label="Question totals"></dl>
+      <div class="table-wrap">
+        <table class="qtable">
+          <thead><tr><th>Time</th><th>Question</th><th>Outcome</th><th class="num">Latency</th><th>Citations</th><th class="center">Rating</th></tr></thead>
+          <tbody id="qs"></tbody>
+        </table>
+        <p class="table-empty" id="qs-empty" hidden>No questions yet. They appear here as people use the chat.</p>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="h-prev">
+      <div class="panel-head">
+        <div>
+          <h2 id="h-prev">Retrieval check</h2>
+          <p class="hint">See which passages a question pulls from the index, before any answer is written.</p>
+        </div>
+      </div>
+      <form class="prev-form" id="prev-form">
+        <label class="sr-only" for="prev-q">Question</label>
+        <input type="text" id="prev-q" placeholder="Ask something the documents should answer" autocomplete="off">
+        <button class="btn" type="submit" id="prev-btn">Preview retrieval</button>
+      </form>
+      <p class="prev-msg" id="prev-msg" hidden></p>
+      <ol class="hits" id="hits"></ol>
+    </section>
+  </main>
+
+  <div class="scrim" id="scrim" hidden>
+    <div class="dialog" role="alertdialog" aria-modal="true" aria-labelledby="dlg-title" aria-describedby="dlg-body">
+      <h2 id="dlg-title">Delete document?</h2>
+      <p id="dlg-body"></p>
+      <div class="dialog-actions">
+        <button class="btn" id="dlg-cancel" type="button">Cancel</button>
+        <button class="btn btn-danger-solid" id="dlg-ok" type="button">Delete</button>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/static/admin.js"></script>
+</body>
+</html>

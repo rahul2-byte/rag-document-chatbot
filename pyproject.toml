@@ -11,11 +11,13 @@ dependencies = [
     "torch==2.15.0",
     "numpy",
     "faiss-cpu==1.16.0",
-    "gradio==6.31.0",
+    "fastapi==0.162.4",
+    "uvicorn==0.54.0",
+    "python-multipart==0.0.33",
 ]
 
 [dependency-groups]
-dev = ["pytest==9.1.1"]
+dev = ["pytest==9.1.1", "httpx==0.28.1"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

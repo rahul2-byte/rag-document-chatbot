@@ -1,0 +1,138 @@
+[
+  {
+    "id": "q1",
+    "question": "What are the four core functions of the AI RMF 1.0?",
+    "answerable": true,
+    "expected": [
+      {
+        "source": "NIST.AI.100-1.pdf",
+        "pages": [
+          8,
+          25
+        ]
+      }
+    ],
+    "answer_hint": "GOVERN, MAP, MEASURE and MANAGE"
+  },
+  {
+    "id": "q2",
+    "question": "Which characteristics does the AI RMF list for trustworthy AI systems?",
+    "answerable": true,
+    "expected": [
+      {
+        "source": "NIST.AI.100-1.pdf",
+        "pages": [
+          17
+        ]
+      }
+    ],
+    "answer_hint": "Valid and reliable; safe; secure and resilient; accountable and transparent; explainable and interpretable; privacy-enhanced; fair with harmful bias managed"
+  },
+  {
+    "id": "q3",
+    "question": "How many Functions does the CSF 2.0 define, and what are they?",
+    "answerable": true,
+    "expected": [
+      {
+        "source": "NIST.CSWP.29.pdf",
+        "pages": [
+          8,
+          9,
+          10,
+          20,
+          31
+        ]
+      }
+    ],
+    "answer_hint": "Six: Govern, Identify, Protect, Detect, Respond, Recover"
+  },
+  {
+    "id": "q4",
+    "question": "What are the four Tiers of the CSF 2.0 and their names?",
+    "answerable": true,
+    "expected": [
+      {
+        "source": "NIST.CSWP.29.pdf",
+        "pages": [
+          12,
+          31
+        ]
+      }
+    ],
+    "answer_hint": "Partial (Tier 1), Risk Informed (Tier 2), Repeatable (Tier 3), Adaptive (Tier 4)"
+  },
+  {
+    "id": "q5",
+    "question": "Under which CSF 2.0 Function is the category Incident Recovery Plan Execution (RC.RP) located?",
+    "answerable": true,
+    "expected": [
+      {
+        "source": "NIST.CSWP.29.pdf",
+        "pages": [
+          20,
+          27
+        ]
+      }
+    ],
+    "answer_hint": "Recover (RC)"
+  },
+  {
+    "id": "q6",
+    "question": "What are the five Functions of the NIST Privacy Framework 1.0?",
+    "answerable": true,
+    "expected": [
+      {
+        "source": "NIST.CSWP.01162020.pdf",
+        "pages": [
+          10,
+          11,
+          22
+        ]
+      }
+    ],
+    "answer_hint": "Identify-P, Govern-P, Control-P, Communicate-P, Protect-P"
+  },
+  {
+    "id": "q7",
+    "question": "Does the NIST Privacy Framework describe itself as a voluntary tool?",
+    "answerable": true,
+    "expected": [
+      {
+        "source": "NIST.CSWP.01162020.pdf",
+        "pages": [
+          2,
+          5
+        ]
+      }
+    ],
+    "answer_hint": "Yes, it is described as a voluntary tool"
+  },
+  {
+    "id": "q8",
+    "question": "Is the AI RMF described as voluntary and use-case agnostic?",
+    "answerable": true,
+    "expected": [
+      {
+        "source": "NIST.AI.100-1.pdf",
+        "pages": [
+          7
+        ]
+      }
+    ],
+    "answer_hint": "Yes: voluntary, rights-preserving, non-sector-specific and use-case agnostic"
+  },
+  {
+    "id": "q9",
+    "question": "What fines does the NIST Privacy Framework prescribe for organizations that violate GDPR Article 83?",
+    "answerable": false,
+    "expected": [],
+    "answer_hint": "Not covered by the documents"
+  },
+  {
+    "id": "q10",
+    "question": "What minimum number of staff must an organization employ for a Chief Privacy Officer role under the NIST Privacy Framework?",
+    "answerable": false,
+    "expected": [],
+    "answer_hint": "Not covered by the documents"
+  }
+]
