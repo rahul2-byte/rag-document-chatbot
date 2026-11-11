@@ -1,0 +1,21 @@
+[project]
+name = "rag-demo"
+version = "0.1.0"
+description = "Small RAG chatbot demo: cited answers from local documents"
+requires-python = ">=3.11"
+dependencies = [
+    "anthropic==1.17.0",
+    "openai==3.16.2",
+    "pypdf==6.19.0",
+    "sentence-transformers==6.0.1",
+    "torch==2.15.0",
+    "numpy",
+    "faiss-cpu==1.16.0",
+    "gradio==6.31.0",
+]
+
+[dependency-groups]
+dev = ["pytest==9.1.1"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
